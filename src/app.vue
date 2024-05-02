@@ -1,11 +1,16 @@
 <script>
+
+
 export default {
   name: 'app',
   title: 'Planifi',
   data() {
     return {
       drawer: false,
-      items: []
+      items: [
+        {label: 'DataTable', to: '/data-table'}
+
+      ],
     }
   },
   methods: {

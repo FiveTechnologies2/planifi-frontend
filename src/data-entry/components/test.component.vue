@@ -1,14 +1,6 @@
-<script>
-export default {
-  name: "data-table",
-  data() {
-    return {
-      products: null
-    }
-  }
-};
 
-</script>
+
+
 
 <template>
   <div class="card">
@@ -26,6 +18,18 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<script>
+//import { worker } from '/server/db.json'; //Data
 
-</style>
+export default {
+  name: "data-table",
+  data() {
+    return {
+      products: null
+    };
+  },
+  mounted() {
+    //ProductService.getProductsMini().then((data) => (this.products = data));
+  }
+};
+</script>
