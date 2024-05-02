@@ -22,13 +22,14 @@
 //import { worker } from '/server/db.json'; //Data
 
 export default {
+  name: "data-table",
   data() {
     return {
       products: null
     };
   },
   mounted() {
-    ProductService.getProductsMini().then((data) => (this.products = data));
+    //ProductService.getProductsMini().then((data) => (this.products = data));
   }
 };
 </script>
