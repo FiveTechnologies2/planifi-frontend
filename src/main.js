@@ -11,10 +11,13 @@ import 'primeicons/primeicons.css'
 import Button from "primevue/button";
 import Sidebar from "primevue/sidebar";
 import Menu from "primevue/menu";
+import Ripple from "primevue/ripple";
 
-createApp(App)
-    .use(router)
+const app = createApp(App);
+
+app.use(router)
     .use(PrimeVue, {ripple: true})
+    .directive('ripple', Ripple)
     .use(ConfirmationService)
     .use(DialogService)
     .use(ToastService)
