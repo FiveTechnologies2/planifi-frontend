@@ -13,6 +13,7 @@ import 'primeicons/primeicons.css'
 import Button from "primevue/button";
 import Menu from "primevue/menu";
 import DataTable   from "primevue/datatable";
+import Column from "primevue/column";
 
 
 
@@ -26,4 +27,5 @@ createApp(App)
     .component('pv-button', Button)
     .component('pv-menu', Menu)
     .component('pv-data-table', DataTable)
+    .component('pv-column', Column )
     .mount('#app')

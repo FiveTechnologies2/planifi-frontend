@@ -9,7 +9,7 @@ const router = createRouter( {
        // {path: '/side-menu', component: SideMenuComponent, meta: {title: 'Side Menu'} },
 
         {path: '/data-table', component: DataTableComponent,meta: {title: 'Data Table'} },
-        { path: '/', redirectTo: '/data-table'}
+        { path: '/', redirect: '/data-table'}
     ]
 })
 
