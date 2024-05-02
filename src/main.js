@@ -14,7 +14,6 @@ import Button from "primevue/button";
 import Menu from "primevue/menu";
 import DataTable   from "primevue/datatable";
 
-import router from "./router/index.js"
 
 
 createApp(App)
