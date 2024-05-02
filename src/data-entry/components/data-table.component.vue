@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { worker } from '/server/db.json'; //Data
+//import { worker } from '/server/db.json'; //Data
 
 export default {
   data() {
