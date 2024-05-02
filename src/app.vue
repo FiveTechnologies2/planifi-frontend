@@ -18,6 +18,7 @@ export default {
       this.drawer = !this.drawer
     }
   }
+  //data
 }
 </script>
 
