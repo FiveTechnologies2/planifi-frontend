@@ -32,10 +32,10 @@ export default {
 </script>
 
 <template>
-  <div class="card">
+  <div class="menu-card">
     <pv-menu :model="items" class="menu">
       <template #start>
-          <span class="start-menu">
+          <span class="menu-start">
             <img class="menu-logo" src="/src/assets/logo-planifi.svg" alt="logo-planifi">
             <div style="display: flex; flex-direction: column; padding-left: 10px; padding-bottom: 10px">
               <h1 style="font-size: 20px">Business Company</h1>
@@ -59,7 +59,7 @@ export default {
 </template>
 
 <style>
-.card {
+.menu-card {
   width: 100%;
   height: 100%;
   max-width: 300px;
@@ -100,7 +100,7 @@ export default {
   color: black;
 }
 
-.start-menu {
+.menu-start {
   width: auto;
   position: absolute;
   top: 0;
