@@ -10,6 +10,7 @@ import {PrimeIcons} from "primevue/api";
 import 'primeicons/primeicons.css'
 import Button from "primevue/button";
 import Sidebar from "primevue/sidebar";
+import Menu from "primevue/menu";
 
 createApp(App)
     .use(router)
@@ -20,4 +21,5 @@ createApp(App)
     .use(PrimeIcons)
     .component('pv-button', Button)
     .component('pv-sidebar', Sidebar)
+    .component('pv-menu', Menu)
     .mount('#app')
