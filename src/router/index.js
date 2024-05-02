@@ -1,12 +1,12 @@
 import {createRouter, createWebHistory} from "vue-router";
-import StartChooseComponent from "../project-follow/pages/start-choose.component.vue";
 import StartPlanillasComponent from "../project-follow/pages/start-planillas.component.vue";
+import ChooseOrganization from "../project-follow/pages/choose-organization.vue";
 
 const router = createRouter( {
     history: createWebHistory(),
     routes: [
-        { path: '/start-choose', component: StartChooseComponent, meta: {title: 'Start Choose'} },
-        { path: '/', redirect: '/start-choose'},
+        { path: '/choose-organization', component: ChooseOrganization, meta: {title: 'Choose Organization'} },
+        { path: '/', redirect: '/choose-organization'},
         { path: '/start-planillas', component: StartPlanillasComponent, meta: {title: 'Start Planillas'}}
     ]
 })
