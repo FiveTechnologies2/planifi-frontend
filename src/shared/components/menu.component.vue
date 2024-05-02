@@ -8,7 +8,7 @@ export default {
         {
           label: 'Home',
           icon: 'pi pi-home',
-          route: '/',
+          route: '/home',
           color: 'white'
         },
         {
@@ -19,7 +19,7 @@ export default {
         {
           label: 'Organization',
           icon: 'pi pi-users',
-          route: '/organization'
+          route: '/choose-organization'
         },
       ],
       iconStyle: {
