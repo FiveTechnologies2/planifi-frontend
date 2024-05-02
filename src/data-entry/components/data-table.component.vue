@@ -1,5 +1,5 @@
 <script>
-import httpCommon from "../../shared/services/http-common.js";
+//import httpCommon from "../../shared/services/http-common.js";
 
 export default {
   name: "data-table",

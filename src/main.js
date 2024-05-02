@@ -14,6 +14,10 @@ import Button from "primevue/button";
 import Menu from "primevue/menu";
 import DataTable   from "primevue/datatable";
 import Column from "primevue/column";
+import FloatLabel from "primevue/floatlabel";
+import Dropdown from "primevue/dropdown";
+import InputText from "primevue/inputtext";
+import Tag from "primevue/tag";
 
 
 
@@ -28,4 +32,8 @@ createApp(App)
     .component('pv-menu', Menu)
     .component('pv-data-table', DataTable)
     .component('pv-column', Column )
+    .component ('pv-float-label', FloatLabel)
+    .component('pv-dropdown', Dropdown)
+    .component('pv-input-text', InputText)
+    .component('pv-tag', Tag)
     .mount('#app')
