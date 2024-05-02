@@ -6,7 +6,8 @@ export default {
     return {
       drawer: false,
       items: [
-        { label: 'Choose Organization', to: '/choose-organization'}
+        { label: 'Choose Organization', to: '/choose-organization'},
+        { label: 'My Projects', to: '/my-projects'}
       ]
     }
   },
