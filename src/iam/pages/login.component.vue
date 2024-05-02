@@ -3,8 +3,13 @@ export default {
   name: "login",
   data() {
     return {
+      title: { singular: 'User'},
+      user: {},
+      statuses: [{label: 'Logged', value: 'logged'}, {label: 'Unlogged', value: 'unlogged'}],
       password: null,
       showPassword: false,
+      createDialogIsVisible: false,
+      submitted: false,
       passwordBarStyle: {
         padding: '12px',
         fontSize: '20px',
@@ -15,6 +20,11 @@ export default {
   methods: {
     togglePassword() {
       this.showPassword = !this.showPassword;
+    },
+
+    createUser() {
+      this.user.id = 0;
+
     }
   }
 }
