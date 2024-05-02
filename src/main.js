@@ -21,7 +21,7 @@ import Tag from "primevue/tag";
 import Dialog from "primevue/dialog";
 import ConfirmDialog from "primevue/confirmdialog";
 import Toolbar from "primevue/toolbar";
-
+import Toast from "primevue/toast";
 
 
 createApp(App)
@@ -34,13 +34,13 @@ createApp(App)
     .component('pv-button', Button)
     .component('pv-menu', Menu)
     .component('pv-data-table', DataTable)
-    .component('pv-column', Column )
-    .component ('pv-float-label', FloatLabel)
+    .component('pv-column', Column)
+    .component('pv-float-label', FloatLabel)
     .component('pv-dropdown', Dropdown)
     .component('pv-input-text', InputText)
     .component('pv-tag', Tag)
     .component('pv-dialog', Dialog)
-    .component('pv-toast', ToastService)
+    .component('pv-toast', Toast)
     .component('pv-confirm-dialog', ConfirmDialog)
     .component('pv-toolbar', Toolbar)
-    .mount('#app')
+    .mount('#app');
