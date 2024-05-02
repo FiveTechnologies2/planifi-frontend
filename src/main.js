@@ -9,6 +9,14 @@ import ToastService from "primevue/toastservice";
 import {PrimeIcons} from "primevue/api";
 import 'primeicons/primeicons.css'
 
+
+import Button from "primevue/button";
+import Menu from "primevue/menu";
+import DataTable   from "primevue/datatable";
+
+import router from "./router/index.js"
+
+
 createApp(App)
     .use(router)
     .use(PrimeVue, {ripple: true})
@@ -16,4 +24,7 @@ createApp(App)
     .use(DialogService)
     .use(ToastService)
     .use(PrimeIcons)
+    .component('pv-button', Button)
+    .component('pv-menu', Menu)
+    .component('pv-data-table', DataTable)
     .mount('#app')
