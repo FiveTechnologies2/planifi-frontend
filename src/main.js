@@ -18,6 +18,9 @@ import FloatLabel from "primevue/floatlabel";
 import Dropdown from "primevue/dropdown";
 import InputText from "primevue/inputtext";
 import Tag from "primevue/tag";
+import Dialog from "primevue/dialog";
+import ConfirmDialog from "primevue/confirmdialog";
+import Toolbar from "primevue/toolbar";
 
 
 
@@ -36,4 +39,8 @@ createApp(App)
     .component('pv-dropdown', Dropdown)
     .component('pv-input-text', InputText)
     .component('pv-tag', Tag)
+    .component('pv-dialog', Dialog)
+    .component('pv-toast', ToastService)
+    .component('pv-confirm-dialog', ConfirmDialog)
+    .component('pv-toolbar', Toolbar)
     .mount('#app')

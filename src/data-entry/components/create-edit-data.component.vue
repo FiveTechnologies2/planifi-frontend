@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <create-and-edit :entity="item" :visible="visible" entityName="Tutorial" @canceled="canceledEventHandler"
+  <create-edit :entity="item" :visible="visible" entityName="Tutorial" @canceled="canceledEventHandler"
                    @saved="savedEventHandler">
     <template #content>
       <div class="p-fluid">
@@ -77,7 +77,7 @@ export default {
         </div>
       </div>
     </template>
-  </create-and-edit>
+  </create-edit>
 </template>
 
 <style scoped>
