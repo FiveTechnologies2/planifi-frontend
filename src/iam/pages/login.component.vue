@@ -56,7 +56,7 @@ export default {
         </template>
         <template #content>
           <div class="login-buttons">
-            <div><pv-button class="login-button" label="Login"></pv-button></div>
+            <div><router-link to="/choose-organization"><pv-button class="login-button" label="Login"></pv-button></router-link></div>
             <div><pv-button class="google-button">
               <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
             </pv-button></div>
