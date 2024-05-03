@@ -1,8 +1,6 @@
-
 import http from "../../shared/services/http-common.js";
 
-
-export class WorkerApiService {
+export class WorkersApiService {
     getAll() {
         return http.get('/worker');
     }

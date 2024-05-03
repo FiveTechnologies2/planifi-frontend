@@ -3,7 +3,7 @@ import CreateEdit from "../../shared/components/create-edit.component.vue";
 
 
 export default {
-  name: "create-edit-data",
+  name: "worker-item-create-edit-data",
   components: {CreateEdit},
   props: {
     item: null,
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <create-edit :entity="item" :visible="visible" entityName="Tutorial" @canceled="canceledEventHandler"
+  <create-edit :entity="item" :visible="visible" entityName="Worker" @canceled="canceledEventHandler"
                    @saved="savedEventHandler">
     <template #content>
       <div class="p-fluid">
@@ -79,7 +79,3 @@ export default {
     </template>
   </create-edit>
 </template>
-
-<style scoped>
-
-</style>

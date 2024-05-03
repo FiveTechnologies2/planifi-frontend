@@ -44,7 +44,3 @@ export default {
     </template>
   </pv-dialog>
 </template>
-
-<style scoped>
-
-</style>

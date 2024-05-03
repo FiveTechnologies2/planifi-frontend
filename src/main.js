@@ -6,7 +6,7 @@ import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import DialogService from "primevue/dialogservice";
 import ToastService from "primevue/toastservice";
-import {PrimeIcons} from "primevue/api";
+import {FilterMatchMode, PrimeIcons} from "primevue/api";
 import 'primeicons/primeicons.css'
 
 
@@ -31,6 +31,7 @@ createApp(App)
     .use(DialogService)
     .use(ToastService)
     .use(PrimeIcons)
+    .use(FilterMatchMode)
     .component('pv-button', Button)
     .component('pv-menu', Menu)
     .component('pv-data-table', DataTable)
@@ -43,4 +44,5 @@ createApp(App)
     .component('pv-toast', Toast)
     .component('pv-confirm-dialog', ConfirmDialog)
     .component('pv-toolbar', Toolbar)
+    .component('pv-toast', Toast)
     .mount('#app');

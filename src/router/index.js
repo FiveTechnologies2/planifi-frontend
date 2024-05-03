@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
-import DataTableComponent from "../data-entry/components/data-table.component.vue";
+import WorkerManagementComponent from "../data-entry/pages/worker-management.component.vue";
 
 
 
@@ -8,8 +8,8 @@ const router = createRouter( {
     routes: [
        // {path: '/side-menu', component: SideMenuComponent, meta: {title: 'Side Menu'} },
 
-        {path: '/data-table', component: DataTableComponent,meta: {title: 'Data Table'} },
-        { path: '/', redirect: '/data-table'}
+        {path: '/worker-management', component: WorkerManagementComponent,meta: {title: 'Data Table'} },
+        { path: '/', redirect: '/worker-management'}
     ]
 })
 

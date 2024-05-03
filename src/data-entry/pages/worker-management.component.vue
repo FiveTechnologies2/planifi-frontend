@@ -1,15 +1,12 @@
 <script>
-import DataManager from "../../shared/components/data-manager.component.vue";
-import CreateEditData from "../components/create-edit-data.component.vue";
+import WorkerItemCreateEditDataComponent from "../components/worker-item-create-edit-data.component.vue";
+import DataManagerComponent from "../../shared/components/data-manager.component.vue";
+import {WorkersApiService} from "../services/workers-api.service.js";
 import {Worker} from "../model/worker.entity.js";
-
-
-
-
 
 export default {
   name: "worker-management",
-  components: {CreateEditData, DataManager},
+  components: {'data-manager':DataManagerComponent, 'worker-item-create-edit-data':WorkerItemCreateEditDataComponent},
   data() {
     return {
       title: { singular: 'Worker', plural: 'Workers' },
@@ -52,14 +49,14 @@ export default {
       this.worker = {};
       this.submitted = false;
       this.isEdit = false;
-      this.createAndEditDialogIsVisible = true;
+      this.createEditDataIsVisible = true;
     },
 
     onEditItemEventHandler(item) {
       this.worker = item;
       this.submitted = false;
       this.isEdit = true;
-      this.createAndEditDialogIsVisible = true;
+      this.createEditDataIsVisible = true;
     },
 
     onDeleteItemEventHandler(item) {
@@ -69,7 +66,7 @@ export default {
 
     onDeleteSelectedItemsEventHandler(selectedItems) {
       this.selectedWorker = selectedItems;
-      this.deleteSelectedWorker();
+      this.deleteSelectedWorkers();
     },
 
     //#endregion Data Manager Event Handlers
@@ -77,7 +74,7 @@ export default {
     //#region Worker Item Create and Edit Dialog Event Handlers
 
     onCanceledEventHandler() {
-      this.createAndEditDialogIsVisible = false;
+      this.createEditDataIsVisible = false;
       this.submitted = false;
       this.isEdit = false;
     },
@@ -162,9 +159,57 @@ export default {
 </script>
 
 <template>
+  <div class="w-full">
+    <!-- Tutorial Data Manager -->
+    <data-manager
+        :title=title
+        v-bind:items="workers"
+        v-on:new-item="onNewItemEventHandler"
+        v-on:edit-item="onEditItemEventHandler($event)"
+        v-on:delete-item="onDeleteItemEventHandler($event)"
+        v-on:delete-selected-items="onDeleteSelectedItemsEventHandler($event)">
+      <template #custom-columns>
+        <pv-column :sortable="true" field="id"          header="Id"           style="min-width: 12rem"/>
+        <pv-column :sortable="true" field="title"       header="Title"        style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="description" header="Description"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="status"      header="Status"       style="min-width: 16rem">
+          <template #body="slotProps">
+            <pv-tag :severity="getSeverity(slotProps.data.status)" :value="slotProps.data.status"/>
+          </template>
+        </pv-column>
+      </template>
+    </data-manager>
+    <!-- Tutorial Item Create and Edit Dialog -->
+    <worker-item-create-edit-data
+        :statuses="statuses"
+        :item="worker"
+        :edit="isEdit"
+        :visible="createEditDataIsVisible"
+        v-on:canceled="onCanceledEventHandler"
+        v-on:saved="onSavedEventHandler($event)"/>
 
+  </div>
 </template>
 
 <style scoped>
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+@media screen and (max-width: 960px) {
+  :deep(.p-toolbar) {
+    flex-wrap: wrap;
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .workers {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
 </style>
