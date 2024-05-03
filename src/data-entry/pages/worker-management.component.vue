@@ -22,28 +22,13 @@ export default {
   },
   methods: {
 
-    //#region Helper Methods
-
     notifySuccessfulAction(message) {
       this.$toast.add({severity: "success", summary: "Success", detail: message, life: 3000,});
-    },
-
-    // Get the severity color according to status
-    getSeverity(status) {
-      switch (status) {
-        case 'Published': return 'success';
-        case 'Unpublished': return 'info';
-        default:  return null;
-      }
     },
 
     findIndexById(id) {
       return this.workers.findIndex((worker) => worker.id === id);
     },
-
-    //#endregion Helper Methods
-
-    //#region Data Manager Event Handlers
 
     onNewItemEventHandler() {
       this.worker = {};
@@ -69,10 +54,6 @@ export default {
       this.deleteSelectedWorkers();
     },
 
-    //#endregion Data Manager Event Handlers
-
-    //#region Worker Item Create and Edit Dialog Event Handlers
-
     onCanceledEventHandler() {
       this.createEditDataIsVisible = false;
       this.submitted = false;
@@ -92,17 +73,10 @@ export default {
       this.isEdit = false;
     },
 
-    //#endregion Data Manager Event Handlers
-
-    //#region Data Actions
-
-    // Create a new item
-
     createWorker() {
       let highestId = Math.max(...this.workers.map(worker => parseInt(worker.id)));
-      // Increment the highest id by 1
       let newId = highestId + 1;
-      // Assign the new id to the worker
+
       this.worker.id = newId.toString();
       this.worker = Worker.fromDisplayableWorker(this.worker);
       this.workersService.create(this.worker)
@@ -112,8 +86,6 @@ export default {
             this.notifySuccessfulAction("Worker Created");
           });
     },
-
-    // Update an existing item
 
     updateWorker() {
       this.worker = Worker.fromDisplayableWorker(this.worker);
@@ -126,8 +98,6 @@ export default {
           });
     },
 
-    // Delete a item
-
     deleteWorker() {
       this.workersService.delete(this.worker.id)
           .then(() => {
@@ -137,8 +107,6 @@ export default {
           });
     },
 
-    // Delete selected workers
-
     deleteSelectedWorkers() {
       this.selectedWorker.forEach((worker) => {
         this.workersService.delete(worker.id).then(() => {
@@ -147,9 +115,8 @@ export default {
       });
       this.notifySuccessfulAction("Workers Deleted");
     }
-
-    //#endregion Data Actions
   },
+
   created() {
     this.workersService = new WorkersApiService();
 
