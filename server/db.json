@@ -1,0 +1,114 @@
+{
+  "workers":[
+    {
+      "id": "1",
+      "name": "Juan Perez",
+      "email": "juan@example.com",
+      "phone": "123-456-7890",
+      "address": "123 Calle Principal",
+      "position": "Desarrollador",
+      "workedHours": 40,
+      "extraHours": 5,
+      "performance": "medio"
+    },
+    {
+      "id": "2",
+      "name": "María García",
+      "email": "maria@example.com",
+      "phone": "456-789-0123",
+      "address": "456 Avenida Secundaria",
+      "position": "Diseñador",
+      "workedHours": 35,
+      "extraHours": 7,
+      "performance": "alto"
+    },
+    {
+      "id": "3",
+      "name": "Luis González",
+      "email": "luis@example.com",
+      "phone": "789-012-3456",
+      "address": "789 Calle Central",
+      "position": "Gerente de Proyecto",
+      "workedHours": 45,
+      "extraHours": 3,
+      "performance": "alto"
+    },
+    {
+      "id": "4",
+      "name": "Ana Rodríguez",
+      "email": "ana@example.com",
+      "phone": "012-345-6789",
+      "address": "012 Avenida Principal",
+      "position": "Analista de Datos",
+      "workedHours": 38,
+      "extraHours": 8,
+      "performance": "bajo"
+    },
+    {
+      "id": "5",
+      "name": "Carlos Martínez",
+      "email": "carlos@example.com",
+      "phone": "345-678-9012",
+      "address": "345 Avenida Norte",
+      "position": "Ingeniero de Software",
+      "workedHours": 42,
+      "extraHours": 6,
+      "performance": "medio"
+    },
+    {
+      "id": "6",
+      "name": "Sofía López",
+      "email": "sofia@example.com",
+      "phone": "678-901-2345",
+      "address": "678 Avenida Sur",
+      "position": "QA Tester",
+      "workedHours": 37,
+      "extraHours": 4,
+      "performance": "alto"
+    },
+    {
+      "id": "7",
+      "name": "Pedro Hernández",
+      "email": "pedro@example.com",
+      "phone": "901-234-5678",
+      "address": "901 Calle Este",
+      "position": "Administrador de Sistemas",
+      "workedHours": 40,
+      "extraHours": 2,
+      "performance": "bajo"
+    },
+    {
+      "id": "8",
+      "name": "Laura Díaz",
+      "email": "laura@example.com",
+      "phone": "234-567-8901",
+      "address": "234 Calle Oeste",
+      "position": "Desarrollador Web",
+      "workedHours": 39,
+      "extraHours": 9,
+      "performance": "medio"
+    },
+    {
+      "id": "9",
+      "name": "Daniel Vargas",
+      "email": "daniel@example.com",
+      "phone": "567-890-1234",
+      "address": "567 Avenida Centro",
+      "position": "Ingeniero de Redes",
+      "workedHours": 41,
+      "extraHours": 5,
+      "performance": "bajo"
+    },
+    {
+      "id": "10",
+      "name": "Elena Ruiz",
+      "email": "elena@example.com",
+      "phone": "890-123-4567",
+      "address": "890 Calle Secundaria",
+      "position": "Diseñador UX/UI",
+      "workedHours": 36,
+      "extraHours": 7,
+      "performance": "alto"
+    }
+  ]
+}
