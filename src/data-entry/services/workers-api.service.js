@@ -14,14 +14,14 @@ export class WorkersApiService {
     }
 
     update(id, workerResource) {
-        return http.put(`/worker/${id}`, workerResource);
+        return http.put(`/workers/${id}`, workerResource);
     }
 
     delete(id) {
         return http.delete(`/workers/${id}`);
     }
 
-    findByTitle(title) {
-        return http.get(`/workers?title=${title}`);
+    findByName(name) {
+        return http.get(`/workers?name=${name}`);
     }
 }

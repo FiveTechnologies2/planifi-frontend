@@ -75,6 +75,24 @@ export default {
           <pv-input-text id="position" v-model="item.position" :class="{'p-invalid': submitted && !item.position}"/>
           <small v-if="submitted && !item.position" class="p-invalid">Position is required.</small>
         </div>
+        <p></p>
+        <div class="field mt-5">
+          <label for="worked-hours">Worked Hours</label>
+          <pv-input-text id="worked-hours" v-model="item.workedHours" :class="{'p-invalid': submitted && !item.workedHours}"/>
+          <small v-if="submitted && !item.workedHours" class="p-invalid">Worked Hours is required.</small>
+        </div>
+        <p></p>
+        <div class="field mt-5">
+          <label for="extra-hours">Extra Hours</label>
+          <pv-input-text id="extra-hours" v-model="item.extraHours" :class="{'p-invalid': submitted && !item.extraHours}"/>
+          <small v-if="submitted && !item.extraHours" class="p-invalid">Extra Hours is required.</small>
+        </div>
+        <p></p>
+        <div class="field mt-5">
+          <label for="performance">Performance</label>
+          <pv-input-text id="performance" v-model="item.performance" :class="{'p-invalid': submitted && !item.performance}"/>
+          <small v-if="submitted && !item.performance" class="p-invalid">Performance is required.</small>
+        </div>
       </div>
     </template>
   </create-edit>

@@ -81,7 +81,7 @@ export default {
 
     onSavedEventHandler(item) {
       this.submitted = true;
-      if (this.worker.name.trim() && this.worker.email.trim() && this.worker.phone.trim() && this.worker.address.trim() && this.worker.position.trim()) {
+      if (this.worker.name.trim()) {
         if (item.id) {
           this.updateWorker();
         } else {
@@ -170,11 +170,14 @@ export default {
         v-on:delete-selected-items="onDeleteSelectedItemsEventHandler($event)">
       <template #custom-columns>
         <pv-column :sortable="true" field="id"          header="Id"           style="min-width: 12rem"/>
-        <pv-column :sortable="true" field="mame"       header="Name"        style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="name"       header="Name"        style="min-width: 16rem"/>
         <pv-column :sortable="true" field="email"      header="E-mail"  style="min-width: 16rem"/>
         <pv-column :sortable="true" field="phone"      header="Phone"  style="min-width: 16rem"/>
         <pv-column :sortable="true" field="address"      header="Address"  style="min-width: 16rem"/>
         <pv-column :sortable="true" field="position"      header="Position"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="workedHours"      header="Worked Hours"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="extraHours"      header="Extra Hours"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="performance"      header="Performance"  style="min-width: 16rem"/>
       </template>
     </data-manager>
     <!-- Tutorial Item Create and Edit Dialog -->
