@@ -8,7 +8,9 @@ export default {
       items: [
         { label: 'Check Account', to: '/check-account'},
         { label: 'Login', to: '/login' },
-        { label: 'Register', to: '/register'}
+        { label: 'Register', to: '/register'},
+        { label: 'Choose Organization', to: '/choose-organization'},
+        { label: 'My Projects', to: '/my-projects'}
       ]
     }
   },
