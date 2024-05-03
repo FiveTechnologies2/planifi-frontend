@@ -81,7 +81,7 @@ export default {
 
     onSavedEventHandler(item) {
       this.submitted = true;
-      if (this.worker.name.trim()) {
+      if (this.worker.name.trim() && this.worker.email.trim() && this.worker.phone.trim() && this.worker.address.trim() && this.worker.position.trim() && this.worker.workedHours.trim() && this.worker.extraHours.trim() && this.worker.performance.trim()) {
         if (item.id) {
           this.updateWorker();
         } else {
@@ -99,7 +99,11 @@ export default {
     // Create a new item
 
     createWorker() {
-      this.worker.id = 0;
+      let highestId = Math.max(...this.workers.map(worker => parseInt(worker.id)));
+      // Increment the highest id by 1
+      let newId = highestId + 1;
+      // Assign the new id to the worker
+      this.worker.id = newId.toString();
       this.worker = Worker.fromDisplayableWorker(this.worker);
       this.workersService.create(this.worker)
           .then((response) => {
@@ -160,7 +164,7 @@ export default {
 
 <template>
   <div class="w-full">
-    <!-- Tutorial Data Manager -->
+
     <data-manager
         :title=title
         v-bind:items="workers"
@@ -180,14 +184,14 @@ export default {
         <pv-column :sortable="true" field="performance"      header="Performance"  style="min-width: 16rem"/>
       </template>
     </data-manager>
-    <!-- Tutorial Item Create and Edit Dialog -->
+
     <worker-item-create-edit-data
         :statuses="statuses"
         :item="worker"
         :edit="isEdit"
         :visible="createEditDataIsVisible"
         v-on:canceled="onCanceledEventHandler"
-        v-on:saved="onSavedEventHandler($event)"/>
+        v-on:saved="onSavedEventHandler(worker)"/>
 
   </div>
 </template>

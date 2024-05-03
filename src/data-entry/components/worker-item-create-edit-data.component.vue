@@ -77,14 +77,14 @@ export default {
         </div>
         <p></p>
         <div class="field mt-5">
-          <label for="worked-hours">Worked Hours</label>
-          <pv-input-text id="worked-hours" v-model="item.workedHours" :class="{'p-invalid': submitted && !item.workedHours}"/>
+          <label for="workedHours">Worked Hours</label>
+          <pv-input-text id="workedHours" v-model="item.workedHours" :class="{'p-invalid': submitted && !item.workedHours}"/>
           <small v-if="submitted && !item.workedHours" class="p-invalid">Worked Hours is required.</small>
         </div>
         <p></p>
         <div class="field mt-5">
-          <label for="extra-hours">Extra Hours</label>
-          <pv-input-text id="extra-hours" v-model="item.extraHours" :class="{'p-invalid': submitted && !item.extraHours}"/>
+          <label for="extraHours">Extra Hours</label>
+          <pv-input-text id="extraHours" v-model="item.extraHours" :class="{'p-invalid': submitted && !item.extraHours}"/>
           <small v-if="submitted && !item.extraHours" class="p-invalid">Extra Hours is required.</small>
         </div>
         <p></p>
