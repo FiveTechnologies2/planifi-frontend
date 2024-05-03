@@ -15,9 +15,11 @@ export default {
       <span style="font-size: 24px;font-weight:bold">LET'S START</span>
       <p style="padding-top: 100px; font-size: 22px; font-weight: bold">Choose an organization or join one</p>
       <div class="my-projects-buttons">
-        <pv-button type="button" class="my-projects-button">
-          <img class="my-projects-image" src="/src/assets/icon-last-project.png" alt="icon-business-company">
-        </pv-button>
+        <router-link to="/worker-management">
+          <pv-button type="button" class="my-projects-button">
+            <img class="my-projects-image" src="/src/assets/icon-last-project.png" alt="icon-business-company">
+          </pv-button>
+        </router-link>
         <pv-button type="button" class="my-projects-button">
           <img class="my-projects-image" src="/src/assets/icon-plus.png" alt="icon-plus">
         </pv-button>

@@ -130,7 +130,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="management">
 
     <data-manager
         :title=title
@@ -163,7 +163,12 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
+.management {
+  width: 100%;
+  height: 100%;
+}
+
 .table-header {
   display: flex;
   align-items: center;
