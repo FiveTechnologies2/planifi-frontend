@@ -2,15 +2,15 @@ import http from "../../shared/services/http-common.js";
 
 export class WorkersApiService {
     getAll() {
-        return http.get('/worker');
+        return http.get('/workers');
     }
 
     getById(id) {
-        return http.get(`/worker/${id}`);
+        return http.get(`/workers/${id}`);
     }
 
     create(workerResource) {
-        return http.post('/worker', workerResource);
+        return http.post('/workers', workerResource);
     }
 
     update(id, workerResource) {
@@ -18,10 +18,10 @@ export class WorkersApiService {
     }
 
     delete(id) {
-        return http.delete(`/worker/${id}`);
+        return http.delete(`/workers/${id}`);
     }
 
     findByTitle(title) {
-        return http.get(`/worker?title=${title}`);
+        return http.get(`/workers?title=${title}`);
     }
 }

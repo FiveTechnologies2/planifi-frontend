@@ -81,14 +81,14 @@ export default {
 
     onSavedEventHandler(item) {
       this.submitted = true;
-      if (this.worker.title.trim()) {
+      if (this.worker.name.trim() && this.worker.email.trim() && this.worker.phone.trim() && this.worker.address.trim() && this.worker.position.trim()) {
         if (item.id) {
           this.updateWorker();
         } else {
           this.createWorker();
         }
       }
-      this.createAndEditDialogIsVisible = false;
+      this.createEditDataIsVisible = false;
       this.isEdit = false;
     },
 
@@ -103,7 +103,7 @@ export default {
       this.worker = Worker.fromDisplayableWorker(this.worker);
       this.workersService.create(this.worker)
           .then((response) => {
-            this.worker = worker.toDisplayableWorker(response.data);
+            this.worker = Worker.toDisplayableWorker(response.data);
             this.workers.push(this.worker);
             this.notifySuccessfulAction("Worker Created");
           });
@@ -170,13 +170,11 @@ export default {
         v-on:delete-selected-items="onDeleteSelectedItemsEventHandler($event)">
       <template #custom-columns>
         <pv-column :sortable="true" field="id"          header="Id"           style="min-width: 12rem"/>
-        <pv-column :sortable="true" field="title"       header="Title"        style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="description" header="Description"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="status"      header="Status"       style="min-width: 16rem">
-          <template #body="slotProps">
-            <pv-tag :severity="getSeverity(slotProps.data.status)" :value="slotProps.data.status"/>
-          </template>
-        </pv-column>
+        <pv-column :sortable="true" field="mame"       header="Name"        style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="email"      header="E-mail"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="phone"      header="Phone"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="address"      header="Address"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="position"      header="Position"  style="min-width: 16rem"/>
       </template>
     </data-manager>
     <!-- Tutorial Item Create and Edit Dialog -->

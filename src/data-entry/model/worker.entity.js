@@ -22,7 +22,7 @@ export class Worker{
             displayableWorker.workedHours,
             displayableWorker.extraHours,
             displayableWorker.performance
-        )
+        );
     }
 
     static toDisplayableWorker(worker) {

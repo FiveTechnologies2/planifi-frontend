@@ -47,33 +47,33 @@ export default {
     <template #content>
       <div class="p-fluid">
         <div class="field mt-5">
-          <pv-float-label>
-            <label for="title">Title</label>
-            <pv-input-text id="title" v-model="item.title" :class="{'p-invalid': submitted && !item.title}"/>
-            <small v-if="submitted && !item.title" class="p-invalid">Title is required.</small>
-          </pv-float-label>
+          <label for="name">Name</label>
+          <pv-input-text id="name" v-model="item.name" :class="{'p-invalid': submitted && !item.name}"/>
+          <small v-if="submitted && !item.name" class="p-invalid">Name is required.</small>
         </div>
-        <div class="p-field mt-5">
-          <pv-float-label>
-            <label for="description">Description</label>
-            <input id="description" v-model="item.description" class="p-inputtext p-component" type="text"/>
-          </pv-float-label>
+        <p></p>
+        <div class="field mt-5">
+          <label for="email">E-mail</label>
+          <pv-input-text id="email" v-model="item.email" :class="{'p-invalid': submitted && !item.email}"/>
+          <small v-if="submitted && !item.email" class="p-invalid">E-mail is required.</small>
         </div>
-        <div class="p-field mt-5">
-          <pv-float-label>
-            <label for="status">Status</label>
-            <pv-dropdown id="published" v-model="item.status" :options="statuses" optionLabel="label" placeholder="Select and Status">
-              <template #value="slotProps">
-                <div v-if="slotProps.value && slotProps.value.value">
-                  <pv-tag :severity="getSeverity(slotProps.value.label)" :value="slotProps.value.value"/>
-                </div>
-                <div v-else-if="slotProps.value && !slotProps.value.value">
-                  <pv-tag :severity="getSeverity(slotProps.value)" :value="slotProps.value"/>
-                </div>
-                <span v-else>{{ slotProps.placeholder }}</span>
-              </template>
-            </pv-dropdown>
-          </pv-float-label>
+        <p></p>
+        <div class="field mt-5">
+          <label for="phone">Phone</label>
+          <pv-input-text id="phone" v-model="item.phone" :class="{'p-invalid': submitted && !item.phone}"/>
+          <small v-if="submitted && !item.phone" class="p-invalid">Phone is required.</small>
+        </div>
+        <p></p>
+        <div class="field mt-5">
+          <label for="address">Address</label>
+          <pv-input-text id="address" v-model="item.address" :class="{'p-invalid': submitted && !item.address}"/>
+          <small v-if="submitted && !item.address" class="p-invalid">Address is required.</small>
+        </div>
+        <p></p>
+        <div class="field mt-5">
+          <label for="position">Position</label>
+          <pv-input-text id="position" v-model="item.position" :class="{'p-invalid': submitted && !item.position}"/>
+          <small v-if="submitted && !item.position" class="p-invalid">Position is required.</small>
         </div>
       </div>
     </template>

@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
+import 'primevue/resources/themes/aura-light-green/theme.css'
 import App from './app.vue'
 import router from "./router/index.js";
 import PrimeVue from "primevue/config";
@@ -8,8 +9,6 @@ import DialogService from "primevue/dialogservice";
 import ToastService from "primevue/toastservice";
 import {FilterMatchMode, PrimeIcons} from "primevue/api";
 import 'primeicons/primeicons.css'
-
-
 import Button from "primevue/button";
 import Menu from "primevue/menu";
 import DataTable   from "primevue/datatable";
