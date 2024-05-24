@@ -22,13 +22,19 @@ export default {
       dialogStyle = this.size === 'large' ? { width: '900px'} : defaultStyle;
       return dialogStyle;
     }
-
+  },
+  computed: {
+    dialogClass() {
+      return {
+        'dialog-visible': this.visible
+      }
+    }
   }
 }
 </script>
 
 <template>
-  <pv-dialog v-bind:visible="visible" :modal="true" :style="getDialogStyle()" class="dialog" :header="entityName" @cancel="onCancel">
+  <pv-dialog v-bind:visible="visible" :modal="true" :style="getDialogStyle()" class="dialog" :header="entityName" @cancel="onCancel" :class="dialogClass">
     <template #header>
       <div class="dialog-header">
         <div>{{ getHeaderTitle() }}</div>
@@ -46,15 +52,22 @@ export default {
 
 <style>
 .dialog {
-  width: auto;
-  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
   background-color: #e8f5e9; /* Verde muy claro */
   border: 1px solid #c8e6c9; /* Verde claro */
   padding: 10px;
-  font-size: 20px;
+  font-size: 24px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+.dialog-visible {
+  position: absolute;;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .dialog-header {
