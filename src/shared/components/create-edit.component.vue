@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-  <pv-dialog v-bind:visible="visible" :modal="true" :style="getDialogStyle()" class="dialog" :header="entityName" @cancel="onCancel" :class="dialogClass">
+  <pv-dialog v-bind:visible="visible" :modal="true" :style="getDialogStyle()" class="dialog" :header="entityName" @cancel="onCancel" :class="dialogClass" :closable="false">
     <template #header>
       <div class="dialog-header">
         <div>{{ getHeaderTitle() }}</div>
@@ -43,8 +43,8 @@ export default {
     <slot name="content"></slot>
     <template #footer>
       <div class="dialog-footer">
-        <pv-button type="button" :label="getSubmitLabel()" class="p-button-text" icon="pi pi-check" @click="onSave"/>
-        <pv-button type="button" label="Cancel" severity="danger" class="p-button-text" style="color: orangered" icon="pi pi-times" @click="onCancel"/>
+        <pv-button type="button" :label="getSubmitLabel()" class="p-button-create" icon="pi pi-check" @click="onSave"/>
+        <pv-button type="button" label="Cancel" class="p-button-cancel" icon="pi pi-times" @click="onCancel"/>
       </div>
     </template>
   </pv-dialog>
@@ -89,27 +89,33 @@ export default {
   padding-bottom: 10px;
 }
 
-.p-button-text {
-  font-size: 16px;
-  padding: 8px;
-  border-radius: 5px;
-  background-color: #66bb6a; /* Verde medio */
+.p-button-create {
+  background-color: #4CAF50; /* Verde brillante */
+  border-color: #4CAF50;
   color: white;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
 }
 
-.p-button-text:hover {
-  background-color: #43a047; /* Verde oscuro */
-  transform: scale(1.1);
+.p-button-create:hover {
+  background-color: #45a049; /* Verde oscuro */
+  border-color: #45a049;
 }
 
-.p-button-text:active {
-  background-color: #3e8e41; /* Verde muy oscuro */
+.p-button-cancel {
+  background-color: #f44336; /* Rojo brillante */
+  border-color: #f44336;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
 }
 
-.pv-dialog .pv-dialog-close-button {
-  background-color: #f00; /* Cambia el color de fondo a rojo */
-  color: #fff;
+.p-button-cancel:hover {
+  background-color: #e53935; /* Rojo oscuro */
+  border-color: #e53935;
+}
+
+.pv.dialog .close-icon {
+  display: none;
 }
 </style>

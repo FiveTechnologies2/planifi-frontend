@@ -80,19 +80,19 @@ export default {
 
   <!-- Data Table Section -->
   <pv-data-table class="data-table"
-      ref="dt"
-      v-model:selection="selectedItems"
-      :filters="filters"
-      :paginator="true"
-      :rows="10"
-      :rows-per-page-options="[5, 10, 20]"
-      :value="items"
-      current-page-report-template="Showing {first} to {last} of {totalRecords} ${{title.plural}}"
-      data-key="id"
-      paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown">
+                 ref="dt"
+                 v-model:selection="selectedItems"
+                 :filters="filters"
+                 :paginator="true"
+                 :rows="10"
+                 :rows-per-page-options="[5, 10, 20]"
+                 :value="items"
+                 current-page-report-template="Showing {first} to {last} of {totalRecords} ${{title.plural}}"
+                 data-key="id"
+                 paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown">
     <pv-column :exportable="false" selectionMode="multiple" style="width: 3rem"/>
     <slot name="custom-columns"></slot>
-    <pv-column v-if="dynamic" v-for="column in columns" :key="column.field" :field="column.field" :header="column.header"/>
+    <pv-column v-if="dynamic" v-for="column in columns" :key="column.field" :field="column.field" :header="column.header" style="width: 100%"/>
     <pv-column :exportable="false" style="min-width:8rem">
       <template #body="slotProps">
         <pv-button icon="pi pi-pencil" outlined rounded class="pencil-button" @click="editItem(slotProps.data)"/>
@@ -104,8 +104,9 @@ export default {
 </template>
 
 <style>
+
 .toolbar {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -120,6 +121,8 @@ export default {
 .data-table {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #c8e6c9; /* Verde claro */
   border-radius: 0.5rem;
   overflow: hidden;

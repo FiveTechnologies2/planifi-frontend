@@ -140,15 +140,15 @@ export default {
         v-on:delete-item="onDeleteItemEventHandler($event)"
         v-on:delete-selected-items="onDeleteSelectedItemsEventHandler($event)">
       <template #custom-columns>
-        <pv-column :sortable="true" field="id"          header="Id"           style="min-width: 12rem"/>
-        <pv-column :sortable="true" field="name"       header="Name"        style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="email"      header="E-mail"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="phone"      header="Phone"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="address"      header="Address"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="position"      header="Position"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="workedHours"      header="Worked Hours"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="extraHours"      header="Extra Hours"  style="min-width: 16rem"/>
-        <pv-column :sortable="true" field="performance"      header="Performance"  style="min-width: 16rem"/>
+        <pv-column :sortable="true" field="id" header="Id" style="min-width: 12rem; flex: 1; width: calc(100% - 95%)"/>
+        <pv-column :sortable="true" field="name"       header="Name"        style="min-width: 16rem; flex: 1; width: calc(100% - 85%)"/>
+        <pv-column :sortable="true" field="email"      header="E-mail"  style="min-width: 16rem; flex: 1; width: calc(100% - 85%)"/>
+        <pv-column :sortable="true" field="phone"      header="Phone"  style="min-width: 16rem; flex: 1; width: calc(100% - 90%)"/>
+        <pv-column :sortable="true" field="address"      header="Address"  style="min-width: 16rem; flex: 1; width: calc(100% - 85%)"/>
+        <pv-column :sortable="true" field="position"      header="Position"  style="min-width: 16rem; flex: 1; width: calc(100% - 90%)"/>
+        <pv-column :sortable="true" field="workedHours"      header="Worked Hours"  style="min-width: 16rem; flex: 1; width: calc(100% - 90%)"/>
+        <pv-column :sortable="true" field="extraHours"      header="Extra Hours"  style="min-width: 16rem; flex: 1; width: calc(100% - 90%)"/>
+        <pv-column :sortable="true" field="performance"      header="Performance"  style="min-width: 16rem; flex: 1; width: calc(100% - 90%)"/>
       </template>
     </data-manager>
 
@@ -164,29 +164,15 @@ export default {
 </template>
 
 <style>
+
+@media (min-width: 700px) {
+  .worker-management {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
 .management {
-  width: 100%;
-  height: 100%;
-}
-
-.table-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@media screen and (max-width: 960px) {
-  :deep(.p-toolbar) {
-    flex-wrap: wrap;
-
-  }
-}
-
-@media (min-width: 1024px) {
-  .workers {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+  width: auto;
+  height: auto;
 }
 </style>
