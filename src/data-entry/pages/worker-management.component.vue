@@ -114,6 +114,10 @@ export default {
         });
       });
       this.notifySuccessfulAction("Workers Deleted");
+    },
+
+    calculateTotalSalary(worker) {
+      return worker.hoursWorked * worker.payRate;
     }
   },
 
