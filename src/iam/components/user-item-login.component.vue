@@ -1,4 +1,5 @@
 <script>
+import usersHttp from "../../shared/services/http-common-users.js";
 import LoginUser from "../../shared/components/login-user.component.vue";
 
 export default {
@@ -30,13 +31,11 @@ export default {
       this.submitted = true;
       if (user.email.trim() && user.password.trim()) {
         try {
-          // Llamada a la API de inicio de sesión
           const response = await this.loginService(user);
           if (response.success) {
             this.$emit('loginAttempted', user);
             this.$router.push('/choose-organization');
           } else {
-            // Manejo de errores de autenticación
             alert(response.message);
           }
         } catch (error) {
@@ -46,19 +45,12 @@ export default {
       }
     },
     loginService(user) {
-      // Realizar una solicitud GET al endpoint de usuarios en tu servidor JSON
-      return fetch(`http://localhost:3000/users?email=${user.email}&password=${user.password}`)
+      return usersHttp.get(`/users?email=${user.email}&password=${user.password}`)
           .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (data.length > 0) {
-              return { success: true };
-            } else {
+            if (!response.data || response.data.length === 0) {
               return { success: false, message: "Usuario no encontrado o credenciales inválidas" };
+            } else {
+              return { success: true };
             }
           })
           .catch(error => {
