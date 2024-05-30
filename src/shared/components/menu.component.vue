@@ -21,6 +21,7 @@ export default {
           icon: 'pi pi-users',
           route: '/choose-organization'
         },
+    
       ],
       iconStyle: {
         width: '40px',
@@ -52,7 +53,9 @@ export default {
         </router-link>
       </template>
       <template #end>
-        <pv-button label="Settings" icon="pi pi-cog" class="button-settings"/>
+        <router-link to="/app-start-profile">
+       <pv-button label="Settings" icon="pi pi-cog" class="button-settings"/>
+      </router-link>
       </template>
     </pv-menu>
   </div>
