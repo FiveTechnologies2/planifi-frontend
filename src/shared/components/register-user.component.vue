@@ -6,14 +6,19 @@ export default {
   data() {
     return {
       visible: true,
+      submitted: false
     }
   },
   methods: {
     onCancel() {
       this.$emit('canceled');
     },
+    validateForm() {
+      return this.entity.name.trim() && this.entity.email.trim() && this.entity.password.trim() && this.entity.business_name.trim() && this.entity.password.trim();
+    },
     onRegister() {
-      this.$emit('saved', this.entity);
+      this.submitted = true;
+      this.$emit('registerAttempted');
     }
   },
   computed: {
@@ -34,7 +39,9 @@ export default {
     <slot name="content"></slot>
     <template #footer>
       <div class="register-buttons">
-        <div><pv-button label="Sign Up" class="login-button" @click="onRegister"></pv-button></div>
+        <div>
+          <pv-button class="login-button" label="Sign Up" @click="onRegister"></pv-button>
+        </div>
         <div><button class="google-button">
           <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
         </button></div>

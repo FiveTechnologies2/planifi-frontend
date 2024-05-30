@@ -28,25 +28,15 @@ export default {
     togglePassword() {
       this.showPassword = !this.showPassword;
     },
-    getSeverity(status) {
-      switch (status) {
-        case 'Registered':
-          return 'success';
-        case 'Unregistered':
-          return 'info';
-        default:
-          return null;
-      }
-    },
     canceledEventHandler() {
       this.$emit('canceled');
     },
-
     registeredEventHandler() {
       console.log(this.item);
       this.submitted = true;
-      if (this.item.name) {
+      if (this.item.name.trim() && this.item.email.trim() && this.item.business_name.trim() && this.item.password.trim()) {
         this.$emit('saved', this.item);
+        this.$router.push('/login');
       }
     }
   }
@@ -54,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <register-user :entity="item" entityName="User" @canceled="canceledEventHandler" @saved="registeredEventHandler">
+  <register-user :entity="item" entityName="User" @registerAttempted="registeredEventHandler">
     <template #content>
       <div class="register-content">
         <div class="register-input-text">
