@@ -31,7 +31,7 @@ export default {
     <menu-component></menu-component>
       <button class="back-button"> Back to Home</button>
       <div class="profile-section">
-        <img class="company-logo" src="" alt="Company Logo">
+        <img class="company-logo" src="/src/assets/icon-business-company.png" alt="Company Logo">
         <button class="choose-picture">Choose picture</button>
       </div>
       <h2>Business Company</h2>
@@ -49,17 +49,16 @@ export default {
           </div>
         </div>
         <div class="form-group">
-          <label>Add members</label>
+          <button class="add-members">Add members +</button>
           <div class="members">
-            <img class="member-avatar" src="" alt="Member">
-            <img class="member-avatar" src="" alt="Member">
-            <img class="member-avatar" src="" alt="Member">
+            <img class="member-avatar" src="/src/assets/members.jpg" alt="Member">
+            <img class="member-avatar" src="/src/assets/members.jpg" alt="Member">
           </div>
         </div>
         <div class="form-group admin-group">
           <label>Company Admin</label>
           <div class="admin-info">
-            <img class="admin-avatar" src="" alt="Admin">
+            <img class="admin-avatar" src="/src/assets/Victor.jpg" alt="Admin">
             <span>Viktor Lince</span>
             <button class="change-button">Change</button>
           </div>
@@ -69,6 +68,7 @@ export default {
           <label for="email">Company E-mail</label>
           <input type="email" id="email" v-model="email">
         </div>
+        <div class="contact-row">
         <div class="form-group">
           <label for="country">Country</label>
           <select id="country" v-model="country">
@@ -78,6 +78,7 @@ export default {
         <div class="form-group">
           <label for="phone">Company Phone</label>
           <input type="text" id="phone" v-model="phone">
+        </div>
         </div>
         <div class="form-group">
           <label for="address">Company Address</label>
@@ -120,6 +121,12 @@ export default {
   margin-bottom: 20px;
 }
 
+.add-members {
+  background: none;
+  border: none;
+  color: #57C600;
+  cursor: pointer;
+}
 .company-logo {
   width: 150px;
   height: 150px;
@@ -182,18 +189,29 @@ h2 {
 }
 
 .plan-button.premium {
-  background-color: #FFD700;
+  background-color: #57C600;
   color: #fff;
+  border: 2px solid #57C600;
+  border-radius: 5px;
 }
 
 .plan-button.standard {
-  background-color: #57C600;
+  background-color: #95e05c;
   color: #fff;
+  border: 2px solid #57C600;
+  border-radius: 5px;
 }
 
 .plan-button.basic {
-  background-color: #ddd;
+  background-color: #fdfdfd;
   color: #000;
+  border: 2px solid #57C600;
+  border-radius: 5px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 15px;
 }
 
 .members {
@@ -209,13 +227,13 @@ h2 {
 }
 
 .admin-group {
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
 }
 
 .admin-info {
-  display: flex;
+  display: block;
   align-items: center;
 }
 
