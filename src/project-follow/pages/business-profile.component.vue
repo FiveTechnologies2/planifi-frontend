@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     createOrganization() {
-      // Add your form submission logic here
+      
     }
   }
 };
