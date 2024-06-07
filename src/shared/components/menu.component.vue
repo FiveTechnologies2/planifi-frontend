@@ -54,8 +54,9 @@ export default {
       </template>
       <template #end>
         <router-link to="/app-start-profile">
-       <pv-button label="Settings" icon="pi pi-cog" class="button-settings"/>
-      </router-link>
+        <pv-button label="Settings" icon="pi pi-cog" class="button-settings"/>
+        </router-link>
+
       </template>
     </pv-menu>
   </div>

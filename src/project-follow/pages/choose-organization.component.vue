@@ -18,9 +18,11 @@ export default {
         <pv-button type="button" class="organization-button">
           <img class="organization-image" src="/src/assets/icon-business-company.png" alt="icon-business-company">
         </pv-button>
+        <router-link to="business-profile">
         <pv-button type="button" class="organization-button">
           <img class="organization-image" src="/src/assets/icon-plus.png" alt="icon-plus">
         </pv-button>
+        </router-link>
       </div>
     </div>
   </div>
