@@ -33,7 +33,7 @@ export default {
     <menu-component></menu-component>
     <div class="profile-container">
       <div class="profile-image">
-        <img :src="profileImageUrl" alt="Profile Picture">
+        <img class="profile" src="/src/assets/user.jpg" alt="Profile Picture">
         <button @click="changeProfilePicture" class="change-profile-button">Change profile picture</button>
       </div>
       <h2>{{ name }}</h2>
