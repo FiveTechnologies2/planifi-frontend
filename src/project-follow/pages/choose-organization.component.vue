@@ -3,7 +3,7 @@ import menuComponent from "../../shared/components/menu.component.vue";
 
 export default {
   name: "choose-organization",
-  components: {'menu-component':menuComponent}
+  components: {'menu-component': menuComponent}
 }
 </script>
 
@@ -12,7 +12,7 @@ export default {
     <menu-component></menu-component>
     <div class="organization-header">
       <h1 style="font-size: 26px">Good Morning, "Your Name"👋</h1>
-      <span style="font-size: 24px;font-weight:bold">LET'S START</span>
+      <span style="font-size: 24px; font-weight: bold">LET'S START</span>
       <p style="padding-top: 100px; font-size: 22px; font-weight: bold">Choose an organization or join one</p>
       <div class="organization-buttons">
         <pv-button type="button" class="organization-button">
@@ -28,24 +28,26 @@ export default {
   </div>
 </template>
 
-
 <style>
-.organization {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 100%;
+html, body, #app, .organization {
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.organization {
+  display: flex;
+  flex-direction: row;
 }
 
 .organization-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding-left: 20%;
+  flex: 3;
 }
 
 .organization-buttons {
@@ -53,7 +55,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40%;
+  gap: 30%;
   padding-top: 20px;
 }
 
@@ -67,5 +69,11 @@ export default {
   cursor: pointer;
   width: 20rem;
   height: 20rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .organization-header {
+    padding-left: 30%; /* Increase padding to avoid overlap with menu */
+  }
 }
 </style>

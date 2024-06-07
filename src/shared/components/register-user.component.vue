@@ -1,56 +1,70 @@
 <script>
 
 export default {
-  name: "create",
-  props: { entity: null, entityName: '', edit: Boolean, size: 'default' },
+  name: "register-user",
+  props: { entity: null, visible: Boolean, entityName: '', edit: Boolean, size: 'default' },
   data() {
     return {
-      cardStyle: {
-        width: 'auto',
-        height: 'auto',
-        border: 'gray 1px wave',
-        borderRadius: '10px',
-        backgroundColor: 'white',
-        padding: '24px 96px',
-        fontSize: '24px'
-      }
+      visible: true,
+      submitted: false
     }
   },
   methods: {
+    onCancel() {
+      this.$emit('canceled');
+    },
     onRegister() {
-      this.$emit('registered', this.entity);
-      this.$emit('saved', this.entity);
+      this.submitted = true;
+      this.$emit('registerAttempted');
+    }
+  },
+  computed: {
+    dialogClass() {
+      return {
+        'register-dialog-visible': this.visible
+      }
     }
   }
 }
 </script>
 
 <template>
-  <pv-card v-bind:model="true" class="register-content-card">
+  <pv-dialog v-bind:visible="visible" :modal="true" class="register-dialog" :header="entityName" :class="dialogClass" :closable="false" @cancel="onCancel">
     <template #header>
       <h1 style="text-align: center; padding-bottom: 10px">Sign Up</h1>
     </template>
     <slot name="content"></slot>
     <template #footer>
       <div class="register-buttons">
-        <div><pv-button label="Login" class="login-button" @click="onRegister"></pv-button></div>
-        <div><pv-button class="google-button">
+        <div>
+          <pv-button class="login-button" label="Sign Up" @click="onRegister"></pv-button>
+        </div>
+        <div><button class="google-button">
           <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
-        </pv-button></div>
+        </button></div>
       </div>
     </template>
-  </pv-card>
+  </pv-dialog>
 </template>
 
 <style>
-.register-content-card {
-  width: 500px;
+.register-dialog {
+  min-width: 500px;
+  max-width: 90vw;
   height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
   border: gray 1px wave;
   border-radius: 10px;
   background-color: white;
   padding: 24px 96px;
   font-size: 24px;
+}
+
+.register-dialog-visible {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .register-buttons {
@@ -82,19 +96,20 @@ export default {
 }
 
 .google-button {
+  width: 500px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
   font-size: 20px;
   color: black;
   border: #E9EAEB 1px solid;
   border-radius: 8px;
   background-color: white;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 0 20px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .google-button:hover {
@@ -110,5 +125,6 @@ export default {
   width: 40px;
   margin-right: 12px;
   margin-bottom: 4px;
+  flex-shrink: 0;
 }
 </style>

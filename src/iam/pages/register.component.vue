@@ -30,35 +30,36 @@ export default {
       }
     },
 
-    findIndexById(id) {
-      return this.users.findIndex((user) => user.id === id);
-    },
-
-    onNewItemEventHandler() {
-      this.user = {};
-      this.submitted = false;
-    },
-
     onSavedEventHandler(item) {
       this.submitted = true;
-      if (this.user.name.trim()) {
-        if (item.id) {
-          this.updateUser();
-        } else {
-          this.createUser();
-        }
+      if (this.user.name.trim() && this.user.email.trim() && this.user.password.trim()){
+        this.createUser();
       }
     },
 
-    createUser() {
-      this.user.id = 0;
-      this.user = User.fromDisplayableUser(this.user);
-      this.userService.create(this.user)
-          .then((response) => {
-            this.user = User.toDisplayableUser(response.data);
-            this.users.push(this.user);
-            this.notifySuccessfulAction("User Created");
-          });
+    async createUser() {
+      try {
+        let highestId = await this.userService.getHighestId();
+        highestId = parseInt(highestId);
+
+        if (isNaN(highestId)) {
+          console.error('Error: highestId is not a number:', highestId);
+          return;
+        }
+
+        let newId = highestId + 1;
+
+        this.user.id = newId.toString();
+        this.user = User.fromDisplayableUser(this.user);
+        this.userService.create(this.user)
+            .then((response) => {
+              this.user = User.toDisplayableUser(response.data);
+              this.users.push(this.user);
+              this.notifySuccessfulAction("User Registered Successfully");
+            });
+      } catch (error) {
+        console.error('Error:', error);
+      }
     },
   },
   created() {
@@ -78,19 +79,22 @@ export default {
     <user-item-register
       :statuses="statuses"
       :item="user"
-      @saved="onSavedEventHandler"/>
+      v-on:saved="onSavedEventHandler(user)"/>
   </div>
 </template>
 
 <style>
   .register {
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    width: auto;
+    overflow: auto;
     background-color: #A2D5F2;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
   }
 </style>
