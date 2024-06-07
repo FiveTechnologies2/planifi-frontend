@@ -89,7 +89,7 @@ export default {
   </template>
 
 <style>
-.company-profile {
+.business-profile {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
