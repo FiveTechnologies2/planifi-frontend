@@ -85,7 +85,7 @@ export default {
       </template>
       <template #footer>
         <div class="register-buttons">
-          <div><pv-button label="Sign Up" class="login-button" @click="registeredEventHandler"></pv-button></div>
+          <div><router-link to="/login"><pv-button class="login-button" label="Sign Up" @click="registeredEventHandler"></pv-button></router-link></div>
           <div><pv-button class="google-button">
             <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign Up with Google
           </pv-button></div>
