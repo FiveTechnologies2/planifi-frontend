@@ -5,6 +5,7 @@ import registerComponent from "../iam/pages/register.component.vue";
 import MyProjectsComponent from "../project-follow/pages/my-projects.component.vue";
 import ChooseOrganizationComponent from "../project-follow/pages/choose-organization.component.vue";
 import WorkerManagementComponent from "../data-entry/pages/worker-management.component.vue";
+import HomeComponent from "../project-follow/pages/home.component.vue";
 
 const router = createRouter( {
     history: createWebHistory(),
@@ -15,7 +16,8 @@ const router = createRouter( {
         { path: '/choose-organization', component: ChooseOrganizationComponent, meta: {title: 'Choose Organization'} },
         { path: '/my-projects', component: MyProjectsComponent, meta: {title: 'My Projects'}},
         { path: '/worker-management', component: WorkerManagementComponent,meta: {title: 'Data Table'} },
-        { path: '/', redirect: '/check-account'}
+        { path: '/', redirect: '/check-account'},
+        { path: '/home', component: HomeComponent, meta: {title: 'Home'}}
     ]
 })
 

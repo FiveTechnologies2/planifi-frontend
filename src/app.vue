@@ -11,7 +11,8 @@ export default {
         { label: 'Register', to: '/register'},
         { label: 'Choose Organization', to: '/choose-organization'},
         { label: 'My Projects', to: '/my-projects'},
-        { label: 'DataTable', to: '/data-table'}
+        { label: 'DataTable', to: '/data-table'},
+        { label: 'Home', to: '/home'},
       ]
     }
   },
